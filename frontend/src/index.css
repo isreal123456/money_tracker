@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+html.dark body {
+  background: #020617;
+  color: #f8fafc;
+}
+
+.glass {
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  transition: all 0.25s ease;
+}
+
+html.dark .glass {
+  border-color: #334155;
+  background: #0f172a;
+}
+
+.saas-card {
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  transition: all 0.2s ease;
+}
+
+.saas-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+}
+
+html.dark .saas-card {
+  border-color: #1e293b;
+  background: #0f172a;
+}
+
+html.dark .saas-card:hover {
+  border-color: #334155;
+}
+
+.saas-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.saas-btn-primary:hover {
+  background: #1e40af;
+}
+
+.saas-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.saas-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.saas-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.saas-btn-secondary:hover {
+  background: #f8fafc;
+}
+
+html.dark .saas-btn-secondary {
+  border-color: #334155;
+  background: #0f172a;
+  color: #cbd5e1;
+}
+
+html.dark .saas-btn-secondary:hover {
+  background: #1e293b;
+}
+
+.saas-input {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  padding: 0.625rem 1rem;
+  color: #0f172a;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saas-input::placeholder {
+  color: #64748b;
+}
+
+.saas-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+html.dark .saas-input {
+  border-color: #334155;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+html.dark .saas-input::placeholder {
+  color: #94a3b8;
+}
+
+.saas-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+html.dark .saas-label {
+  color: #e2e8f0;
+}
+
+.saas-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+html.dark .saas-badge {
+  background: rgba(30, 64, 175, 0.22);
+  color: #93c5fd;
+}
+
+.saas-section {
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+}
+
+html.dark .saas-section {
+  border-color: #1e293b;
+  background: #0f172a;
+}
+
+.saas-gradient {
+  background-image: linear-gradient(135deg, #1e40af 0%, #2563eb 55%, #3b82f6 100%);
+}
