@@ -95,13 +95,13 @@ function Settings() {
             <p className="mt-2 text-sm text-slate-500 dark:text-slate-300">
               Switch between light and dark mode.
             </p>
-            <button
-              type="button"
-              onClick={toggleTheme}
-              className="saas-btn-secondary mt-4 w-full"
-            >
-              {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            </button>
+            {/*<button*/}
+            {/*  type="button"*/}
+            {/*  onClick={toggleTheme}*/}
+            {/*  className="saas-btn-secondary mt-4 w-full"*/}
+            {/*>*/}
+            {/*  {theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}*/}
+            {/*</button>*/}
           </div>
         </div>
       </div>
