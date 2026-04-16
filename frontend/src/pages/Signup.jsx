@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/useAuth'
 
 export function Signup() {
   const navigate = useNavigate()
@@ -30,7 +30,7 @@ export function Signup() {
     setLoading(true)
 
     try {
-      signup(form.email, form.password, form.name)
+      await signup(form.email, form.password, form.name)
       navigate('/dashboard')
     } catch (err) {
       setError(err.message)
@@ -127,5 +127,3 @@ export function Signup() {
     </div>
   )
 }
-
-

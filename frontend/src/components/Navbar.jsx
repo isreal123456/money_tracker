@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/useAuth'
 import { useFinanceState } from '../state/useFinance'
 import { selectAlertCount } from '../state/selectors'
 
@@ -9,7 +9,7 @@ function Navbar() {
   const { user, logout } = useAuth()
   const financeState = useFinanceState()
   const alertCount = selectAlertCount(financeState)
-  const [search, setSearch] = useState('')
+  // const [search, setSearch] = useState('')
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
 
   const userInitial = useMemo(() => {
@@ -17,11 +17,11 @@ function Navbar() {
     return name.charAt(0).toUpperCase()
   }, [user])
 
-  const handleSearchSubmit = (event) => {
-    event.preventDefault()
-    const value = search.trim()
-    navigate(value ? `/dashboard/transactions?q=${encodeURIComponent(value)}` : '/dashboard/transactions')
-  }
+  // const handleSearchSubmit = (event) => {
+  //   event.preventDefault()
+  //   const value = search.trim()
+  //   navigate(value ? `/dashboard/transactions?q=${encodeURIComponent(value)}` : '/dashboard/transactions')
+  // }
 
   const handleLogout = () => {
     logout()
@@ -31,39 +31,39 @@ function Navbar() {
   return (
     <header className="sticky top-3 z-20 mb-4 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:px-6">
       <div className="flex flex-wrap items-center gap-3 md:justify-between">
-        <button
-          type="button"
-          onClick={() => navigate('/dashboard')}
-          className="inline-flex items-center gap-2 rounded-lg px-2 py-1.5 text-left transition hover:bg-slate-100 dark:hover:bg-slate-800"
-        >
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-sm font-bold text-white">
-            FT
-          </span>
-          <span>
-            <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100 md:text-base">Finance Tracker</span>
-            <span className="block text-xs text-slate-500 dark:text-slate-300">Personal dashboard</span>
-          </span>
-        </button>
+        {/*<button*/}
+        {/*  type="button"*/}
+        {/*  onClick={() => navigate('/dashboard')}*/}
+        {/*  className="inline-flex items-center gap-2 rounded-lg px-2 py-1.5 text-left transition hover:bg-slate-100 dark:hover:bg-slate-800"*/}
+        {/*>*/}
+        {/*  <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-sm font-bold text-white">*/}
+        {/*    FT*/}
+        {/*  </span>*/}
+        {/*  <span>*/}
+        {/*    <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100 md:text-base">Finance Tracker</span>*/}
+        {/*    <span className="block text-xs text-slate-500 dark:text-slate-300">Personal dashboard</span>*/}
+        {/*  </span>*/}
+        {/*</button>*/}
 
-        <form onSubmit={handleSearchSubmit} className="order-3 w-full md:order-none md:max-w-xl md:flex-1 md:px-6">
-          <label className="sr-only" htmlFor="navbar-search">Search transactions or categories</label>
-          <div className="relative">
-            <input
-              id="navbar-search"
-              type="search"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search transactions or categories"
-              className="w-full rounded-lg border border-slate-300 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition focus:border-blue-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
-            />
-            <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="7" />
-                <path d="m20 20-3-3" />
-              </svg>
-            </span>
-          </div>
-        </form>
+        {/*<form onSubmit={handleSearchSubmit} className="order-3 w-full md:order-none md:max-w-xl md:flex-1 md:px-6">*/}
+        {/*  <label className="sr-only" htmlFor="navbar-search">Search transactions or categories</label>*/}
+        {/*  <div className="relative">*/}
+        {/*    <input*/}
+        {/*      id="navbar-search"*/}
+        {/*      type="search"*/}
+        {/*      value={search}*/}
+        {/*      onChange={(event) => setSearch(event.target.value)}*/}
+        {/*      placeholder="Search transactions or categories"*/}
+        {/*      className="w-full rounded-lg border border-slate-300 bg-white py-2 pl-9 pr-3 text-sm text-slate-900 outline-none transition focus:border-blue-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"*/}
+        {/*    />*/}
+        {/*    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">*/}
+        {/*      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">*/}
+        {/*        <circle cx="11" cy="11" r="7" />*/}
+        {/*        <path d="m20 20-3-3" />*/}
+        {/*      </svg>*/}
+        {/*    </span>*/}
+        {/*  </div>*/}
+        {/*</form>*/}
 
         <div className="ml-auto flex items-center gap-2">
           <button

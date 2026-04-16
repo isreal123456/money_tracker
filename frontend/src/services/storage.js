@@ -7,6 +7,7 @@ import {
 const STORAGE_KEYS = {
   financeState: 'finance_tracker_state_v2',
   authUser: 'ft_user',
+  authToken: 'ft_token',
 }
 
 const canUseStorage = () => {
@@ -179,4 +180,13 @@ export const loadAuthUser = () => {
 export const saveAuthUser = (user) => setJSON(STORAGE_KEYS.authUser, user)
 
 export const clearAuthUser = () => removeItem(STORAGE_KEYS.authUser)
+
+export const loadAuthToken = () => {
+  const token = getItem(STORAGE_KEYS.authToken)
+  return typeof token === 'string' && token.trim() ? token : null
+}
+
+export const saveAuthToken = (token) => setItem(STORAGE_KEYS.authToken, token)
+
+export const clearAuthToken = () => removeItem(STORAGE_KEYS.authToken)
 

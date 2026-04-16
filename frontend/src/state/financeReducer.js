@@ -81,6 +81,11 @@ export function financeReducer(state, action) {
         ...state,
         theme: state.theme === 'dark' ? 'light' : 'dark',
       }
+    case 'theme/set':
+      return {
+        ...state,
+        theme: action.payload,
+      }
     default:
       return state
   }

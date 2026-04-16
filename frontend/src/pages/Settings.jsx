@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/useAuth'
 import { useFinanceActions, useFinanceState } from '../state/useFinance'
 import { formatDisplayDate } from '../utils/date'
 

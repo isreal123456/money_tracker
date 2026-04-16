@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../contexts/useAuth'
 
 export function Login() {
   const navigate = useNavigate()
-  const { login } = useAuth()
+  const { login, signup } = useAuth()
   const [form, setForm] = useState({ email: '', password: '' })
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -19,7 +19,7 @@ export function Login() {
     setLoading(true)
 
     try {
-      login(form.email, form.password)
+      await login(form.email, form.password)
       navigate('/dashboard')
     } catch (err) {
       setError(err.message)
@@ -28,11 +28,19 @@ export function Login() {
     }
   }
 
-  const demoLogin = () => {
+  const demoLogin = async () => {
     setLoading(true)
+    setError('')
+
     try {
-      login('demo@financetracker.com', 'demo123')
+      try {
+        await login('demo@financetracker.com', 'demo123')
+      } catch {
+        await signup('demo@financetracker.com', 'demo123', 'Demo User')
+      }
       navigate('/dashboard')
+    } catch (err) {
+      setError(err.message)
     } finally {
       setLoading(false)
     }
@@ -114,5 +122,3 @@ export function Login() {
     </div>
   )
 }
-
-
