@@ -20,7 +20,7 @@ def signup(payload: SignupRequest):
         name=payload.name,
         email=payload.email,
         currency=payload.currency or "USD",
-        theme="light",
+        theme="dark",
         password_hash=hash_password(payload.password),
     )
 

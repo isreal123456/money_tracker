@@ -76,7 +76,7 @@ const defaultFinanceState = {
   transactions: MOCK_TRANSACTIONS,
   budget: 2000,
   currency: 'USD',
-  theme: 'light',
+  theme: 'dark',
   goals: MOCK_GOALS,
   notificationPrefs: {
     budgetAlerts: true,
@@ -123,7 +123,7 @@ const normalizeGoals = (value) => {
     }))
 }
 
-const normalizeTheme = (value) => (value === 'dark' || value === 'light' ? value : 'light')
+const normalizeTheme = () => 'dark'
 
 const normalizeCurrency = (value) =>
   typeof value === 'string' && value.trim() ? value : 'USD'

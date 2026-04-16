@@ -9,7 +9,7 @@ class UserProfile(BaseModel):
     name: str
     email: EmailStr
     currency: str = "USD"
-    theme: str = "light"
+    theme: str = "dark"
 
 
 class UserInternal(UserProfile):

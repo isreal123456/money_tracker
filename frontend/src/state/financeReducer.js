@@ -79,7 +79,7 @@ export function financeReducer(state, action) {
     case 'theme/toggle':
       return {
         ...state,
-        theme: state.theme === 'dark' ? 'light' : 'dark',
+        theme: 'dark',
       }
     case 'theme/set':
       return {

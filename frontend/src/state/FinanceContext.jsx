@@ -21,7 +21,7 @@ export function FinanceProvider({ children }) {
   const [state, dispatch] = useReducer(financeReducer, FINANCE_INITIAL_STATE)
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', state.theme === 'dark')
+    document.documentElement.classList.add('dark')
   }, [state.theme])
 
   useEffect(() => {

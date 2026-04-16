@@ -29,7 +29,7 @@ def update_settings(payload: SettingsUpdate, current_user: UserInternal = Depend
         current_user.currency = updates["currency"]
         get_or_create_budget(current_user.id, current_user.currency)["currency"] = updates["currency"]
     if "theme" in updates:
-        current_user.theme = updates["theme"]
+        current_user.theme = "dark"
     if "language" in updates:
         current_user.language = updates["language"]
     if "budgetAlertThreshold" in updates:
